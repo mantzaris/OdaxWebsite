@@ -1,56 +1,45 @@
+// app/[...slug]/page.tsx
 import { notFound } from "next/navigation"
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import { allPages } from "contentlayer/generated"
+import { Mdx } from "@/components/mdx"
 
-import { Mdx } from "@/components/mdx-components"
+type PageParams = { slug: string[] }
 
-interface PageProps {
-  params: {
-    slug: string[]
-  }
-}
-
-async function getPageFromParams(params: PageProps["params"]) {
-  const slug = params?.slug?.join("/")
-  const page = allPages.find((page) => page.slugAsParams === slug)
-
-  if (!page) {
-    null
-  }
-
+function getPageFromParams(params: PageParams): (typeof allPages)[number] | null {
+  const slugPath = (params?.slug ?? []).join("/")
+  const page =
+    allPages.find(p => (p.slugAsParams ?? p.slug) === slugPath) ?? null
   return page
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const page = await getPageFromParams(params)
+export function generateStaticParams(): PageParams[] {
+  return allPages.map(p => ({
+    slug: (p.slugAsParams ?? p.slug).split("/"),
+  }))
+}
 
-  if (!page) {
-    return {}
-  }
-
+export async function generateMetadata(
+  { params }: { params: PageParams }
+): Promise<Metadata> {
+  const page = getPageFromParams(params)
+  if (!page) return {}
   return {
     title: page.title,
     description: page.description,
   }
 }
 
-export async function generateStaticParams(): Promise<PageProps["params"][]> {
-  return allPages.map((page) => ({
-    slug: page.slugAsParams.split("/"),
-  }))
-}
+// Optional: make this segment fully static and fail fast if content is missing
+export const dynamic = "error"
+export const revalidate = false
 
-export default async function PagePage({ params }: PageProps) {
-  const page = await getPageFromParams(params)
-
-  if (!page) {
-    notFound()
-  }
+export default function PagePage({ params }: { params: PageParams }) {
+  const page = getPageFromParams(params)
+  if (!page) notFound() // shows app/not-found.tsx per Next docs
 
   return (
-    <article className="py-6 prose dark:prose-invert">
+    <article className="container mx-auto px-6 py-12 prose dark:prose-invert">
       <h1>{page.title}</h1>
       {page.description && <p className="text-xl">{page.description}</p>}
       <hr />
