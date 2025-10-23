@@ -7,6 +7,8 @@ import { ModeToggle } from "@/components/mode-toggle"
 
 import Image from "next/image"
 
+import HeaderNav from "@/components/header-nav"
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
@@ -41,13 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </Link>
 
               
-              {/* BIGGER, PROMINENT NAV */}
-              <div className="hidden md:flex items-center gap-8">
-                <Link href="/products" className="nav-pill btn-outline">Products</Link>
-                <Link href="/services" className="nav-pill btn-outline">Services</Link>
-                <Link href="/blog" className="nav-pill btn-outline">Blog</Link>
-                <Link href="/contact" className="nav-pill btn-outline">Contact</Link>
-              </div>
+              <HeaderNav />
 
 
               <div className="flex items-center gap-3">
