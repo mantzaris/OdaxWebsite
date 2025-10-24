@@ -15,7 +15,7 @@ export default function Home() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              Software • Electronics • Applied ML
+              Sensing • Data Platforms • Machine Learning
             </span>
 
             <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-6xl">
@@ -24,8 +24,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-              We design and build robust software and instrumentation—from embedded
-              sensing to ML-powered applications—with academic rigor and production quality.
+              We design and build robust software and instrumentation, from embedded sensing to ML powered applications, with academic rigor and production quality. Experience includes SBIR Phase I-II, defense simulation and sonar, bioinformatics for pharma, and open source cross platform applications.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-4">
@@ -46,11 +45,11 @@ export default function Home() {
             <dl className="mt-8 grid grid-cols-2 gap-6 text-sm text-slate-700 dark:text-slate-300">
               <div>
                 <dt className="font-semibold">Focus Areas</dt>
-                <dd>Embedded sensing, data platforms, ML</dd>
+                <dd>Prototyping, productization, SBIR and proposal support</dd>
               </div>
               <div>
                 <dt className="font-semibold">Engagements</dt>
-                <dd>Prototyping, productization, consulting</dd>
+                <dd>Algorithm R&D, full stack builds, consulting and training</dd>
               </div>
             </dl>
           </div>
