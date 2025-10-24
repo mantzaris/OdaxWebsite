@@ -23,7 +23,7 @@ export default function HeaderNav() {
   const pathname = usePathname()
 
   return (
-    <div className="hidden md:flex items-center gap-10" role="menubar" aria-label="Primary">
+    <div className="hidden lg:flex items-center gap-6" role="menubar" aria-label="Primary">
       <Link
         href="/products"
         aria-current={isActive(pathname, "/products") ? "page" : undefined}

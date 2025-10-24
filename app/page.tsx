@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 md:py-28">
+      <section className="py-10 md:py-12 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium shadow-sm dark:border-slate-800 dark:bg-slate-900">
@@ -28,7 +28,7 @@ export default function Home() {
               sensing to ML-powered applications—with academic rigor and production quality.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-red-700"
@@ -43,7 +43,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <dl className="mt-10 grid grid-cols-2 gap-6 text-sm text-slate-700 dark:text-slate-300">
+            <dl className="mt-8 grid grid-cols-2 gap-6 text-sm text-slate-700 dark:text-slate-300">
               <div>
                 <dt className="font-semibold">Focus Areas</dt>
                 <dd>Embedded sensing, data platforms, ML</dd>
@@ -59,7 +59,7 @@ export default function Home() {
             {/* Replace with a real hero visual or product render */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <Image
-                src="/odax-logo.png"
+                src="/brand/logoDense.png"
                 alt="ODAX Technologies logo"
                 fill
                 className="object-contain p-8"
