@@ -16,29 +16,29 @@ const tabs: Tab[] = [
   {
     id: "data-ml",
     label: "Data and ML Systems",
-    heading: "Pipelines and model evaluation you can trust",
+    heading: "Evaluate models and ship data pipelines",
     summary:
-      "ETL, experiment tracking, and analytics with clear metrics for decision making. From classical statistics to modern deep learning (including edge computing).",
-    linkHref: "/services",
-    linkLabel: "See data and ML services",
-  },
-  {
-    id: "embedded",
-    label: "Embedded and Edge computing",
-    heading: "Sensing systems built to ship",
-    summary:
-      "Complete systems for signal processing on a variety of hardware platforms.",
-    linkHref: "/services",
-    linkLabel: "See hardware services",
+      "ETL, experiment tracking, and analytics with reproducible runs and clear metrics.",
+    linkHref: "#data-ml",
+    linkLabel: "See details",
   },
   {
     id: "apps",
     label: "Web and Desktop Apps",
     heading: "Production interfaces for your systems",
     summary:
-      "ElectronJS for cross platform desktop applications. UIs based on modern frameworks like Svelte. Local or connected computation.",
-    linkHref: "/services",
-    linkLabel: "See app development",
+      "Next.js and Electron apps that connect devices to the cloud and present results clearly.",
+    linkHref: "#apps",
+    linkLabel: "See details",
+  },
+  {
+    id: "embedded",
+    label: "Embedded and Edge computing",
+    heading: "Systems built to ship",
+    summary:
+      "Custom sensor interfaces, signal conditioning, firmware, and real time acquisition on constrained hardware.",
+    linkHref: "#embedded",
+    linkLabel: "See details",
   },
 ]
 
