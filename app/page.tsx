@@ -19,16 +19,16 @@ export default function Home() {
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             {
-              title: "Embedded and Electronics",
-              desc: "Sensor design, signal conditioning, firmware, reliability.",
+              title: "Web and Desktop Apps",
+              desc: "Developing cross-platform applications with ElectronJS for a variety of tasks. User-Interfaces using web technologies on web, desktop and single board computers (eg Raspberry Pi) with isolated or connected usecases.",
             },
             {
               title: "Data and ML Systems",
-              desc: "ETL, experimentation, model evaluation, analytics.",
+              desc: "Database systems from traditional SQL (eg. SQLite & PostSQL), NoSQL (eg MongoDB), and vector databases. Analystics that uses classical statistics and machine learning in conjunction. Research & Implementation for situations that require novel solutions.",
             },
             {
-              title: "Web and Desktop Apps",
-              desc: "Next.js, Electron, production-grade interfaces.",
+              title: "Signal Processing",
+              desc: "Signal processing and machine learning for sensor readings from continuous data streams and discrete even streams.",
             },
           ].map((item) => (
             <div

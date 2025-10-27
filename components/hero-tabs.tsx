@@ -14,36 +14,36 @@ type Tab = {
 
 const tabs: Tab[] = [
   {
-    id: "embedded",
-    label: "Embedded and Electronics",
-    heading: "Sensors and signal conditioning, built to ship",
-    summary:
-      "Constant-voltage EDA front ends, microcontroller firmware, test jigs, and reliability workflows.",
-    linkHref: "/services",
-    linkLabel: "See hardware services",
-  },
-  {
     id: "data-ml",
     label: "Data and ML Systems",
     heading: "Pipelines and model evaluation you can trust",
     summary:
-      "ETL, experiment tracking, and analytics with clear metrics for decision making.",
+      "ETL, experiment tracking, and analytics with clear metrics for decision making. From classical statistics to modern deep learning (including edge computing).",
     linkHref: "/services",
     linkLabel: "See data and ML services",
+  },
+  {
+    id: "embedded",
+    label: "Embedded and Edge computing",
+    heading: "Sensing systems built to ship",
+    summary:
+      "Complete systems for signal processing on a variety of hardware platforms.",
+    linkHref: "/services",
+    linkLabel: "See hardware services",
   },
   {
     id: "apps",
     label: "Web and Desktop Apps",
     heading: "Production interfaces for your systems",
     summary:
-      "Next.js and Electron apps that connect devices to the cloud and present results clearly.",
+      "ElectronJS for cross platform desktop applications. UIs based on modern frameworks like Svelte. Local or connected computation.",
     linkHref: "/services",
     linkLabel: "See app development",
   },
 ]
 
 export default function HeroTabs() {
-  const [activeId, setActiveId] = useState<Tab["id"]>("embedded")
+  const [activeId, setActiveId] = useState<Tab["id"]>("data-ml")
   const active = tabs.find(t => t.id === activeId) ?? tabs[0]
 
   return (
