@@ -45,7 +45,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     {/* Logo */}
     <Link href="/" className="flex items-center gap-2" aria-label="ODAX home">
       <Image
-        src="/brand/logoDense.png"
+        src="/brand/ODAX_LOGO_SYMBOL.png"
         alt="ODAX Technologies Inc."
         width={160}
         height={40}
