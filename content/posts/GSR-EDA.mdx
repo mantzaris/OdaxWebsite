@@ -1,0 +1,64 @@
+---
+title: "GSR vs EDA: A Simple Introduction to Galvanic Skin Response and Electrodermal Activity"
+description: "What galvanic skin response sensors measure, how electrodermal activity is defined, where each term is used, and why these signals are useful."
+date: "2025-10-27"
+draft: false
+published: true
+tags: ["gsr", "eda", "biosensing", "sensors"]
+pinned: false
+---
+
+**What does a GSR sensor measure?**  
+A Galvanic Skin Response (GSR) sensor measures changes in the skin's electrical conductance that occur when eccrine sweat glands are activated by the sympathetic nervous system. 
+In direct terms, when arousal rises (for example due to effort, surprise, or cognitive load), tiny amounts of sweat change how well the skin conducts electricity. 
+This is why GSR is often used as a proxy for physiological arousal, not for specific emotions. See: [Critchley 2002](https://pubmed.ncbi.nlm.nih.gov/11954558/), 
+[Posada-Quintero & Chon 2020](https://www.mdpi.com/1424-8220/20/2/479).
+
+**EDA vs GSR: which name is correct?**  
+Electrodermal Activity (EDA) is the umbrella term preferred in the psychophysiology literature and publication standards. It covers several related measures, including skin conductance and skin potential. 
+'GSR' is the older term and is still common in engineering, hobbyist, and historical contexts, but modern scientific writing generally uses 'EDA.'
+Good sources: Society for Psychophysiological Research publication recommendations 
+([Boucsein et al., 2012](https://www.biopac.com/wp-content/uploads/psyp1384.pdf); 
+[Wiley abstract](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-8986.2012.01384.x)) 
+and the practical guide by [Braithwaite et al.](https://www.birmingham.ac.uk/documents/college-les/psych/saal/guide-electrodermal-activity.pdf).
+
+## What information is in an EDA/GSR signal?
+
+- **Tonic level (SCL)**: the slow baseline level of skin conductance that drifts over minutes.  
+- **Phasic responses (SCR or EDR)**: rapid, transient increases time-locked to stimuli or occurring spontaneously.  
+- **Event-related vs non-specific responses**: SCRs can be linked to specific events, or appear without a labeled trigger.  
+- **Common units and thresholds**: conductance is reported in microsiemens (µS). A frequently used threshold for counting a valid SCR is about 0.01 µS (methodologies vary by study).  
+References for definitions and thresholds: [Boucsein et al., 2012](https://www.biopac.com/wp-content/uploads/psyp1384.pdf); 
+[Braithwaite guide](https://www.birmingham.ac.uk/documents/college-les/psych/saal/guide-electrodermal-activity.pdf).
+
+## Where on the body is EDA measured?
+
+- **Preferred sites**: fingers (distal phalanges) or the palm because of high density of eccrine sweat glands.  
+- **Alternative sites**: when hands are busy or not practical, researchers explore wrist, forearm, chest, or other locations; signal quality and artifacts can differ by site.  
+See placement guidance in [Boucsein et al., 2012](https://www.biopac.com/wp-content/uploads/psyp1384.pdf) and an example evaluation of alternative sites in 
+[Gamboa et al., 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC11946426/).
+
+## Why is EDA useful?
+
+- **Stress and workload sensing** for research, adaptive interfaces, and coaching.  
+- **Biofeedback** to help users learn self-regulation strategies (for example, relaxation training or seizure-related protocols).  
+- **Affective and HCI studies** to understand engagement, surprise, or cognitive load.  
+- **Health and behavior research** alongside other signals (heart rate, respiration) in lab and wearable setups.  
+Overviews and examples: stress-detection review in wearables ([Sensors 2024](https://www.mdpi.com/1424-8220/24/10/3221)), EDA biofeedback and epilepsy 
+([Schach et al., 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC8927283/)), and applications reviews ([Posada-Quintero & Chon 2020](https://www.mdpi.com/1424-8220/20/2/479)).
+
+## Quick glossary
+
+- **EDA**: Electrodermal Activity, the preferred umbrella term in research.  
+- **GSR**: Galvanic Skin Response, an older term still used in hobbyist and historical contexts.  
+- **SC / SCL / SCR**: Skin Conductance, Skin Conductance Level (tonic), Skin Conductance Response (phasic).  
+- **EDR**: Electrodermal Response, often used interchangeably with SCR.  
+- **Exosomatic vs endosomatic**: measuring with applied current/voltage vs measuring intrinsic skin potentials.
+
+## A few links to get started
+
+- Publication standards and methods: [Boucsein et al., 2012 SPR report](https://www.biopac.com/wp-content/uploads/psyp1384.pdf)  
+- Practical 'how to' notes: [Braithwaite et al., A Guide for Analysing EDA](https://www.birmingham.ac.uk/documents/college-les/psych/saal/guide-electrodermal-activity.pdf)  
+- Physiology and applications overview: [Critchley 2002](https://pubmed.ncbi.nlm.nih.gov/11954558/), [Posada-Quintero & Chon 2020](https://www.mdpi.com/1424-8220/20/2/479)  
+- Placement alternatives: [Gamboa et al., 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC11946426/)  
+- Device testing concept: [EDA patient simulator, PLOS One 2020](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0228949)

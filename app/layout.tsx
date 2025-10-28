@@ -103,19 +103,44 @@ export default function RootLayout({ children }: RootLayoutProps) {
           {/* Main */}
           <main className="container mx-auto px-4 md:px-6">{children}</main>
 
-          {/* Footer */}
-          <footer className="mt-24 border-t">
-            <div className="container mx-auto px-4 md:px-6 py-10 text-sm text-slate-600 dark:text-slate-300">
-              <div className="flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
-                <p>© {new Date().getFullYear()} ODAX Technologies Inc.</p>
-                <nav className="flex gap-4">
-                  <Link href="/privacy">Privacy</Link>
-                  <Link href="/terms">Terms</Link>
-                  <Link href="/contact">Contact</Link>
-                </nav>
-              </div>
-            </div>
-          </footer>
+         
+
+         {/* Footer */}
+<footer className="mt-24 border-t">
+  <div className="container mx-auto px-4 md:px-6 py-10 text-sm text-slate-600 dark:text-slate-300">
+    <div className="grid gap-6 md:grid-cols-3 md:items-center">
+      {/* Brand mark */}
+      <Link href="/" className="flex items-center gap-3" aria-label="ODAX home">
+        {/* Prefer an SVG with transparent background */}
+        <Image
+          src="/brand/ODAX_LOGO_SYMBOL.png"          // use the tight-cropped asset
+          alt="ODAX symbol"
+          width={28}
+          height={28}
+          className="h-7 w-auto opacity-80 dark:opacity-90"
+          sizes="(max-width: 768px) 28px, 28px"
+          priority={false}
+        />
+        <span className="sr-only">ODAX Technologies Inc.</span>
+      </Link>
+
+      {/* Copyright */}
+      <p className="md:text-center">
+        © {new Date().getFullYear()} ODAX Technologies Inc.
+      </p>
+
+      {/* Footer nav */}
+      <nav className="flex gap-4 md:justify-end">
+        {/* <Link href="/privacy">Privacy</Link> */}
+        {/* <Link href="/terms">Terms</Link> */}
+        <Link href="/contact">Contact</Link>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+         
+
 
           <Analytics />
         </ThemeProvider>

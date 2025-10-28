@@ -55,26 +55,26 @@ export default function Home() {
 
 
 
-<div className="mt-8 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-  {latestPosts.map((post) => (
-    <article
-      key={post._id}
-      className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition dark:border-slate-800 dark:bg-slate-900"
-    >
-      <Link href={post.slug}>
-        <h3 className="text-lg font-semibold group-hover:underline">{post.title}</h3>
-        {post.description && (
-          <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
-            {post.description}
-          </p>
-        )}
-        <p className="mt-3 text-xs text-slate-500">
-          {post.date ? new Date(post.date).toLocaleDateString() : ""}
-        </p>
-      </Link>
-    </article>
-  ))}
-</div>
+      <div className="mt-8 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {latestPosts.map((post) => (
+          <article
+            key={post._id}
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition dark:border-slate-800 dark:bg-slate-900"
+          >
+            <Link href={post.slug}>
+              <h3 className="text-lg font-semibold group-hover:underline">{post.title}</h3>
+              {post.description && (
+                <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+                  {post.description}
+                </p>
+              )}
+              <p className="mt-3 text-xs text-slate-500">
+                {post.date ? new Date(post.date).toLocaleDateString() : ""}
+              </p>
+            </Link>
+          </article>
+        ))}
+      </div>
 
 
 
