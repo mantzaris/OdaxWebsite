@@ -28,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`antialiased min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 text-slate-900 dark:text-slate-50 ${inter.className}`}
+        className={`antialiased min-h-screen min-h-dvh flex flex-col bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 text-slate-900 dark:text-slate-50 ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           
@@ -100,14 +100,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
 
 
-          {/* Main */}
-          <main className="container mx-auto px-4 md:px-6">{children}</main>
+          {/* Main grows to push footer down */}
+          <main className="container mx-auto px-4 md:px-6 flex-1">{children}</main>
 
          
 
          {/* Footer */}
-        <footer className="mt-24 border-t">
-          <div className="container mx-auto px-4 md:px-6 py-10 text-sm text-slate-600 dark:text-slate-300">
+        <footer className="border-t">
+          <div className="container mx-auto px-4 md:px-6 py-8 md:py-10 text-sm text-slate-600 dark:text-slate-300">
             <div className="grid gap-6 md:grid-cols-3 md:items-center">
               {/* Brand mark */}
               <Link href="/" className="flex items-center gap-3" aria-label="ODAX home">
