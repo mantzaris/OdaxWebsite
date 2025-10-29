@@ -23,6 +23,8 @@ export const Product = defineDocumentType(() => ({
   },
 }))
 
+
+
 export const Service = defineDocumentType(() => ({
   name: 'Service',
   filePathPattern: 'services/**/*.mdx',
