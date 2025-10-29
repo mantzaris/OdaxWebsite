@@ -1,7 +1,7 @@
 import { allServices } from 'contentlayer/generated'
 import Link from 'next/link'
 
-export const metadata = { title: 'Services — Odax Technologies Inc.' }
+export const metadata = { title: 'Services - Odax Technologies Inc.' }
 
 export default function ServicesPage() {
   const services = allServices
