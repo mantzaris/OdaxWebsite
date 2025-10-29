@@ -7,7 +7,8 @@ const POST_LIMIT = 6;
 
 export default function Home() {
   const latestPosts = allPosts
-    .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))
+    .filter(p => p.published !== false)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, POST_LIMIT)
 
   return (
@@ -48,7 +49,7 @@ export default function Home() {
       <section className="py-12 border-t">
         <div className="flex items-baseline justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold">Latest from the blog</h2>
-          <Link href="/blog" className="text-sm font-medium text-red-600 hover:underline">
+          <Link href="/posts" className="text-sm font-medium text-red-600 hover:underline">
             View all
           </Link>
         </div>
@@ -61,7 +62,7 @@ export default function Home() {
             key={post._id}
             className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition dark:border-slate-800 dark:bg-slate-900"
           >
-            <Link href={post.slug}>
+            <Link href={post.url}>
               <h3 className="text-lg font-semibold group-hover:underline">{post.title}</h3>
               {post.description && (
                 <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">

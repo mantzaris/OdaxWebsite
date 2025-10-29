@@ -70,7 +70,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     >
       <li><Link href="/products" className="nav-pill btn-outline w-full justify-center">Products</Link></li>
       <li><Link href="/services" className="nav-pill btn-outline w-full justify-center">Services</Link></li>
-      <li><Link href="/blog"     className="nav-pill btn-outline w-full justify-center">Blog</Link></li>
+      <li><Link href="/posts"     className="nav-pill btn-outline w-full justify-center">Blog</Link></li>
       <li><Link href="/contact"  className="nav-pill btn-outline w-full justify-center">Contact</Link></li>
   
       <li className="col-span-2 lg:hidden">
@@ -106,38 +106,38 @@ export default function RootLayout({ children }: RootLayoutProps) {
          
 
          {/* Footer */}
-<footer className="mt-24 border-t">
-  <div className="container mx-auto px-4 md:px-6 py-10 text-sm text-slate-600 dark:text-slate-300">
-    <div className="grid gap-6 md:grid-cols-3 md:items-center">
-      {/* Brand mark */}
-      <Link href="/" className="flex items-center gap-3" aria-label="ODAX home">
-        {/* Prefer an SVG with transparent background */}
-        <Image
-          src="/brand/ODAX_LOGO_SYMBOL.png"          // use the tight-cropped asset
-          alt="ODAX symbol"
-          width={28}
-          height={28}
-          className="h-7 w-auto opacity-80 dark:opacity-90"
-          sizes="(max-width: 768px) 28px, 28px"
-          priority={false}
-        />
-        <span className="sr-only">ODAX Technologies Inc.</span>
-      </Link>
+        <footer className="mt-24 border-t">
+          <div className="container mx-auto px-4 md:px-6 py-10 text-sm text-slate-600 dark:text-slate-300">
+            <div className="grid gap-6 md:grid-cols-3 md:items-center">
+              {/* Brand mark */}
+              <Link href="/" className="flex items-center gap-3" aria-label="ODAX home">
+                {/* Prefer an SVG with transparent background */}
+                <Image
+                  src="/brand/ODAX_LOGO_SYMBOL.png"          // use the tight-cropped asset
+                  alt="ODAX symbol"
+                  width={48}
+                  height={48}
+                  className="h-10 sm:h-12 md:h-14 w-auto opacity-80 dark:opacity-90"
+                  sizes="(max-width: 640px) 40px, (max-width: 768px) 48px, 56px"
+                  priority={false}
+                />
+                <span className="sr-only">ODAX Technologies Inc.</span>
+              </Link>
 
-      {/* Copyright */}
-      <p className="md:text-center">
-        © {new Date().getFullYear()} ODAX Technologies Inc.
-      </p>
+              {/* Copyright */}
+              <p className="md:text-center">
+                © {new Date().getFullYear()} ODAX Technologies Inc.
+              </p>
 
-      {/* Footer nav */}
-      <nav className="flex gap-4 md:justify-end">
-        {/* <Link href="/privacy">Privacy</Link> */}
-        {/* <Link href="/terms">Terms</Link> */}
-        <Link href="/contact">Contact</Link>
-      </nav>
-    </div>
-  </div>
-</footer>
+              {/* Footer nav */}
+              <nav className="flex gap-4 md:justify-end">
+                {/* <Link href="/privacy">Privacy</Link> */}
+                {/* <Link href="/terms">Terms</Link> */}
+                <Link href="/contact">Contact</Link>
+              </nav>
+            </div>
+          </div>
+        </footer>
 
          
 

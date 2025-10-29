@@ -50,7 +50,7 @@ export default function MobileNav() {
           <div className="container mx-auto px-4 py-3 flex flex-col gap-2">
             <Link href="/products" className="nav-pill btn-outline" onClick={() => setOpen(false)}>Products</Link>
             <Link href="/services" className="nav-pill btn-outline" onClick={() => setOpen(false)}>Services</Link>
-            <Link href="/blog"     className="nav-pill btn-outline" onClick={() => setOpen(false)}>Blog</Link>
+            <Link href="/posts"     className="nav-pill btn-outline" onClick={() => setOpen(false)}>Blog</Link>
             <Link href="/contact"  className="nav-pill btn-outline" onClick={() => setOpen(false)}>Contact</Link>
           </div>
         </div>

@@ -51,14 +51,17 @@ export const Post = defineDocumentType(() => ({
     date:  { type: 'date',   required: true },
     description: { type: 'string' },
     published: { type: 'boolean', default: true },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    pinned: { type: 'boolean', default: false },
   },
   computedFields: {
-    // matches common app/posts/[...slug] patterns in shadcn/Contentlayer starters
-    slug:          { type: 'string', resolve: (d) => d._raw.flattenedPath.replace(/^posts\//, '') },
-    slugAsParams:  { type: 'string', resolve: (d) => d._raw.flattenedPath.replace(/^posts\//, '') },
-    url:           { type: 'string', resolve: (d) => `/posts/${d._raw.flattenedPath.replace(/^posts\//, '')}` },
+    // make cards link to /blog/... to match your site nav
+    slug:          { type: 'string', resolve: d => d._raw.flattenedPath.replace(/^posts\//, '') },
+    slugAsParams:  { type: 'string', resolve: d => d._raw.flattenedPath.replace(/^posts\//, '') },
+    url:           { type: 'string', resolve: d => `/posts/${d._raw.flattenedPath.replace(/^posts\//, '')}` },
   },
 }))
+
 
 // Optional: capture content/pages/about.mdx to remove the warning
 export const Page = defineDocumentType(() => ({
