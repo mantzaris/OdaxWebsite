@@ -1,0 +1,3 @@
+npm run dev (explore in dev mode)
+
+npm run build (text for production)
