@@ -1,3 +1,9 @@
 npm run dev (explore in dev mode)
 
 npm run build (text for production)
+
+
+cd ~/Documents/repos/OdaxWebsite
+npm install
+npm run build
+vercel --prod (pushes to vercel)
