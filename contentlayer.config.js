@@ -12,6 +12,7 @@ export const Product = defineDocumentType(() => ({
     name: { type: 'string', required: true },
     shortDescription: { type: 'string', required: true },
     hero: { type: 'string' },
+    heroRotate: { type: 'number' },
     status: { type: 'enum', options: ['alpha','beta','ga'], default: 'ga' },
     features: { type: 'list', of: { type: 'string' } },
     order: { type: 'number' },

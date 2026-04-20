@@ -32,7 +32,13 @@ export default function ProductsPage() {
             <Link href={p.url} className="block p-5">
               {p.hero && (
                 <div className="relative h-40 mb-4">
-                  <Image src={p.hero} alt={`${p.name} image`} fill className="object-contain" />
+                  <Image
+                    src={p.hero}
+                    alt={`${p.name} image`}
+                    fill
+                    className="object-contain"
+                    style={p.heroRotate ? { transform: `rotate(${p.heroRotate}deg)` } : undefined}
+                  />
                 </div>
               )}
               <div className="flex items-center gap-2">

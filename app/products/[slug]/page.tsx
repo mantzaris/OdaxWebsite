@@ -16,7 +16,13 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
       <h1 className="mb-2">{product.name}</h1>
       {product.hero && (
         <div className="not-prose relative h-64 my-6">
-          <Image src={product.hero} alt={`${product.name} hero`} fill className="object-contain" />
+          <Image
+            src={product.hero}
+            alt={`${product.name} hero`}
+            fill
+            className="object-contain"
+            style={product.heroRotate ? { transform: `rotate(${product.heroRotate}deg)` } : undefined}
+          />
         </div>
       )}
       <p className="text-xl mt-0 text-slate-700 dark:text-slate-300">{product.shortDescription}</p>
