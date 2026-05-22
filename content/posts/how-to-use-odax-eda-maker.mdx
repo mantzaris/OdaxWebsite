@@ -1,0 +1,182 @@
+---
+title: "A very simple way to use the ODAX EDA Maker Kit"
+description: "A step-by-step photo tutorial demo setup of the ODAX EDA Maker Kit."
+date: "2026-05-22"
+published: false
+tags: ["eda", "gsr", "tutorial", "odax-eda-maker-kit"]
+pinned: false
+---
+
+## Introduction
+
+Getting started in EDA (Electrodermal Activity sensing also known as GSR Galvanic Skin Response) is an exciting area of biometrics/biofeedback. The Odax EDA Maker Kit provides the key components for this: Analog sensing board, the electrode leads and skin contacts.
+Details on the kit can be found by following the button to the product page:
+<div className="not-prose flex flex-wrap gap-3 mt-4">
+  <a
+    href="https://www.odaxtechnologies.com/products/odax-eda-maker-kit"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+  >
+    View ODAX EDA Maker Kit
+  </a>
+</div>
+
+Most usecases will be utilizing a single board computer like Ardruino or a Raspberry Pi, but here a very simple approach will be described for those seeking an quick way to observe Electrodermal activity.
+
+
+## Step 1
+
+Here is an image of all the items needed to follow this simple demo setup.
+
+<div className="not-prose mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex min-h-[22rem] items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/posts/how-to-use-odax-eda-maker/Simple_tutorial_1a.jpg"
+        alt="TODO_ALT_TEXT_STEP_1"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      The parts needed to follow the basic EDA sensing tutorial.
+    </figcaption>
+  </figure>
+</div>
+
+The items shown in the image:
+  - 1 Odax EDA Maker Kit (includes the circuit board, electrode leads, contact straps)
+  - 1 Voltmeter with alligator contacts (snap contacts)
+  - 1 Breadboard
+  - 4 Male-Male jumper wires
+  - 2 Male jumper wires with alligator clip
+  - 1 battery holder for 2 AA batteries
+  - 2 AA batteries
+
+
+## Step 2
+
+Connect the batter supply to the jumper wires so that the positive and negative are inserted into the Breadboard as shown.
+
+<div className="not-prose mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex min-h-[22rem] items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/posts/how-to-use-odax-eda-maker/Simple_tutorial_2a.jpg"
+        alt="TODO_ALT_TEXT_STEP_2"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Connecting the battery pack to the breadboard.
+    </figcaption>
+  </figure>
+</div>
+
+## Step 3
+
+Connect the 3 Male-Male jumper wires to the EDA board. It is customary to have the red go to the board Vcc, the black to the GND and another color like yellow to the Vout (board sensing output). You can use the terminal block to screw the wires into place. 
+
+<div className="not-prose mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex min-h-[22rem] items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/posts/how-to-use-odax-eda-maker/Simple_tutorial_3a.jpg"
+        alt="TODO_ALT_TEXT_STEP_3"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Placing the jumper wires onto the EDA board.
+    </figcaption>
+  </figure>
+</div>
+
+## Step 4
+
+Connect the EDA board's Vcc (red) to the breadboard power line (also red). Then connect the jumper wire's GND (black ground) to the negative of the breadboard (here blue rail). Leave the yellow signal Vout free for now.
+
+<div className="not-prose mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex min-h-[22rem] items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/posts/how-to-use-odax-eda-maker/Simple_tutorial_4a.jpg"
+        alt="TODO_ALT_TEXT_STEP_4"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Connecting the baord to the PCB board with power.
+    </figcaption>
+  </figure>
+</div>
+
+## Step 5
+
+Turn on the Voltmeter setting it to measure Voltages (V symbol). Connect the Voltmeter black aligator clip to the black jumper wire which will go onto the breadboard ground. Then connect the Voltmeter red clip to the yellow wire coming from the board's Vout (yellow). 
+Lastly connect the electrode leads to the board by inserting the 3.5mm audio jack into the board.
+
+<div className="not-prose mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex min-h-[22rem] items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/posts/how-to-use-odax-eda-maker/Simple_tutorial_5a.jpg"
+        alt="TODO_ALT_TEXT_STEP_5"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Connecting the Voltmeter to the breadboard and the electrode leads to the circuit.
+    </figcaption>
+  </figure>
+</div>
+
+## Step 6
+
+Now you are ready to take your first measurements by placing a strap around your index finger and another around the middle finger. The Voltmeter should now display a voltage.
+
+<div className="not-prose mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex min-h-[22rem] items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/posts/how-to-use-odax-eda-maker/Simple_tutorial_6a.jpg"
+        alt="TODO_ALT_TEXT_STEP_6"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Connecting the contact straps.
+    </figcaption>
+  </figure>
+</div>
+
+## Step 7
+
+If the physiological response of the subject has changed then the voltage displayed will change as a result.
+
+<div className="not-prose mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex min-h-[22rem] items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/posts/how-to-use-odax-eda-maker/Simple_tutorial_7a.jpg"
+        alt="TODO_ALT_TEXT_STEP_7"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Displays of changed Electrodermal activity.
+    </figcaption>
+  </figure>
+</div>
+
+
+## Ending
+
+This concludes the simple setup demonstration. It is a convenient way to explore the usage of the kit with minimal setup.
