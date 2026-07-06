@@ -1,0 +1,170 @@
+---
+name: "ODAX EDA Research Sensor Board"
+shortDescription: "Research-grade precision electrodermal activity EDA / galvanic skin response GSR analog output sensor board for high-impedance ADC and DAQ inputs."
+hero: "/images/products/odax-eda-research/front.jpg"
+status: "ga"
+features:
+  - "Research-grade EDA/GSR analog front end for ADC and DAQ acquisition"
+  - "Low-leakage TIA core with guarded sensitive-node layout"
+  - "Buffered reference and excitation rails with nominal 0.5 V differential excitation"
+  - "Zero-based, ground-referenced analog output for conductance trend analysis"
+  - "Designed for calibration-aware research prototypes and experiments"
+order: 0.25
+published: true
+---
+
+## Overview
+
+The ODAX EDA Research Sensor Board is a compact research-grade analog front-end board for electrodermal activity EDA (aka. galvanic skin response GSR) measurement with two skin-contact electrodes.
+
+It is built for researchers and developers who need a stable, low-noise analog EDA/GSR signal, a documented output model, and a straightforward `VOUT` interface for high-impedance ADC or DAQ inputs.
+
+At the board level, it applies a nominal 0.5 V differential excitation, measures the resulting skin-current magnitude with a low-leakage transimpedance amplifier, subtracts the buffered reference, scales the result, low-pass filters the signal, and presents a buffered zero-based analog voltage at `VOUT`.
+
+The board is intended for relative EDA and GSR response timing, event-locked waveform analysis, calibrated conductance estimation, psychophysiology experiments, HCI research, biofeedback research, and custom data acquisition systems. It is not a medical device and is not intended for diagnosis, monitoring, treatment, or safety-critical use.
+
+## Why Researchers Buy It
+
+- More precise analog front end than the maker-grade board
+- Low-leakage LMP7721 TIA core for small skin-current measurements
+- Guarded sensitive-node layout for improved high-impedance behavior
+- Buffered reference and excitation rails for a more controlled measurement path
+- Zero-based analog output that is easier to connect to an ADC or DAQ channel
+- Calibration-aware output model for teams that need documented measurement constants
+
+## What You Can Build
+
+- Research EDA and GSR acquisition systems
+- Psychophysiology, HCI, affective computing, and biofeedback experiments
+- Wearable or desktop sensing prototypes using two skin-contact electrodes
+- Firmware, filtering, and event-detection pipelines for low-frequency conductance traces
+- Custom DAQ workflows where raw analog visibility and calibration matter
+
+## Datasheet
+
+<div className="not-prose flex flex-wrap gap-3 mt-4">
+  <a
+    href="/datasheets/ODAX-EDA-RB1-R1.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+  >
+    View datasheet (PDF)
+  </a>
+
+  <a
+    href="/datasheets/ODAX-EDA-RB1-R1.pdf"
+    download
+    className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900"
+  >
+    Download PDF
+  </a>
+</div>
+
+## Product Photos
+
+<div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex h-80 items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/products/odax-eda-research/back.jpg"
+        alt="ODAX EDA Research Sensor Board back view"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Back view
+    </figcaption>
+  </figure>
+
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex h-80 items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <img
+        src="/images/products/odax-eda-research/front.jpg"
+        alt="ODAX EDA Research Sensor Board front view"
+        loading="lazy"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Front view
+    </figcaption>
+  </figure>
+</div>
+
+## Key Features
+
+- Research-grade EDA and GSR analog sensor board
+- Low-leakage TIA core with guarded sensitive-node layout
+- Nominal 0.5 V differential excitation through electrode-series resistance
+- Buffered, ground-referenced `VOUT` signal for high-impedance ADC or DAQ inputs
+- Positive output response direction: higher conductance produces higher `VOUT`
+- Approximate low-frequency bandwidth of 6.75 Hz for slow EDA/GSR dynamics
+
+## Built for Research Prototypes
+
+The ODAX EDA Research Board is designed for teams that want a documented, calibration-aware analog path without designing the high-impedance front end from scratch.
+
+For relative analysis, the voltage trace can be used directly for response timing, event-locked waveform shape, and within-session amplitude changes when the same board and ADC path are used. For calibrated conductance estimates or cross-device comparison, the datasheet documents the constants and conversion model that should be measured and recorded.
+
+## Applications
+
+- EDA and GSR acquisition using a high-impedance ADC or DAQ input
+- Psychophysiology, HCI, affective computing, and biofeedback research
+- Wearable or desktop experiments using two finger straps or skin-contact electrodes
+- Firmware and signal-processing development for low-frequency conductance traces
+
+## Technical Details
+
+### Recommended Operating Conditions and Electrical Characteristics
+
+| Parameter | Symbol | Min | Typ | Max | Notes |
+|---|---|---:|---|---:|---|
+| Supply voltage, recommended | `VIN` | 3.0 V | 3.3 V | 5.0 V | Use a clean battery-powered or isolated low-noise supply while electrodes contact skin |
+| Preferred ADC supply alignment |  |  | 3.3 V |  | Power from the same clean 3.3 V analog domain when practical |
+| Reference voltage | `VREF` |  | 0.700 V |  | Buffered reference node |
+| Excitation voltage | `VEXC` |  | 0.200 V |  | Buffered low-voltage excitation node |
+| Excitation difference | `dV` |  | 0.500 V |  | Nominal differential excitation |
+| Useful signal bandwidth | `BW` | DC | 6.75 Hz |  | Intended for slow EDA and GSR dynamics |
+| ADC input impedance | `ZADC` | 100 kOhm | Higher |  | High-impedance ADC or DAQ input preferred |
+| Output response direction |  |  | Positive |  | Higher conductance produces higher `VOUT` |
+
+### Output Scale
+
+| Skin resistance | Conductance | Nominal `VOUT` | Interpretation |
+|---|---:|---:|---|
+| 2 MOhm | 0.500 uS | 0.135 V | Very dry / very low conductance |
+| 1 MOhm | 1.000 uS | 0.264 V | Dry / low conductance |
+| 600 kOhm | 1.667 uS | 0.430 V | Nominal expected baseline |
+| 220 kOhm | 4.545 uS | 1.058 V | Moderate conductance |
+| 100 kOhm | 10.00 uS | 1.964 V | Elevated conductance |
+| 70 kOhm | 14.29 uS | 2.500 V | Near-full-scale design point |
+
+### User Connections
+
+| Connection | Direction | Description |
+|---|---|---|
+| `VIN` | Input | DC supply input. Recommended 3 V to 5 V from a clean battery-powered or isolated low-noise supply while electrodes contact skin |
+| `GND` | Reference | Common ground for the board and ADC or DAQ system |
+| `VOUT` | Output | Ground-referenced analog EDA/GSR output. Connect to a high-impedance ADC or DAQ input |
+
+### Mechanical
+
+| Parameter | Nominal | Unit | Notes |
+|---|---:|---|---|
+| PCB length | 38.5 | mm | Without input jack |
+| PCB width | 29 | mm | Nominal board dimension |
+| Total length | 41 | mm | With input jack |
+| User electrical interface | `VIN`, `GND`, `VOUT` |  | Three simple user connections |
+| MPN | `ODAX-EDA-RB1-100-ASM-R1` |  | Released R1 assembly |
+
+## Getting Started
+
+1. Power the board from a clean battery-powered or properly isolated 3 V to 5 V system.
+2. Connect `VOUT` to a high-impedance ADC or DAQ input and share common `GND`.
+3. Attach two skin-contact electrodes or ODAX EDA contact straps to the electrode input.
+4. Place the contacts on adjacent fingers of the same hand.
+5. Allow the signal to settle before using the trace for baseline-sensitive analysis.
+
+End-system performance depends on electrode condition, skin condition, contact pressure, motion, ADC scaling, ADC input impedance, firmware filtering, and calibration choices.

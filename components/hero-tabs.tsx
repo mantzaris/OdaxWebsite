@@ -14,43 +14,43 @@ type Tab = {
 
 const tabs: Tab[] = [
   {
+    id: "embedded",
+    label: "Electronics and Embedded Systems",
+    heading: "Electronics for sensing, acquisition, and connected products",
+    summary:
+      "Analog sensor interfaces, signal conditioning, firmware, and edge acquisition systems built around real hardware constraints.",
+    linkHref: "#embedded",
+    linkLabel: "See details",
+  },
+  {
     id: "data-ml",
     label: "Data and ML Systems",
-    heading: "Evaluate models and ship data pipelines",
+    heading: "Turn sensor data into reliable analysis",
     summary:
-      "ETL, experiment tracking, and analytics with reproducible runs and clear metrics.",
+      "Data pipelines, analytics, and machine learning workflows for measurements collected from devices, experiments, and deployed systems.",
     linkHref: "#data-ml",
     linkLabel: "See details",
   },
   {
     id: "apps",
     label: "Web and Desktop Apps",
-    heading: "Production interfaces for your systems",
+    heading: "Interfaces for instruments and connected systems",
     summary:
-      "Next.js and Electron apps that connect devices to the cloud and present results clearly.",
+      "Next.js and Electron apps that connect hardware, cloud services, and operators with clear controls and useful data views.",
     linkHref: "#apps",
-    linkLabel: "See details",
-  },
-  {
-    id: "embedded",
-    label: "Embedded and Edge computing",
-    heading: "Systems built to ship",
-    summary:
-      "Custom sensor interfaces, signal conditioning, firmware, and real time acquisition on constrained hardware.",
-    linkHref: "#embedded",
     linkLabel: "See details",
   },
 ]
 
 export default function HeroTabs() {
-  const [activeId, setActiveId] = useState<Tab["id"]>("data-ml")
+  const [activeId, setActiveId] = useState<Tab["id"]>("embedded")
   const active = tabs.find(t => t.id === activeId) ?? tabs[0]
 
   return (
     <section className="py-10 md:py-12 lg:py-16">
       <div className="max-w-3xl">
         <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          Sensing | Data Platforms | Machine Learning
+          Sensor Electronics | Embedded Systems | Data Platforms
         </span>
 
         <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-6xl leading-tight">
@@ -104,8 +104,8 @@ export default function HeroTabs() {
         {/* Small proof row (optional, keep or delete) */}
         <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           <li className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <p className="font-semibold">SBIR Phase I-II</p>
-            <p className="mt-1 text-slate-600 dark:text-slate-400">Proposal to delivery</p>
+            <p className="font-semibold">Sensor electronics</p>
+            <p className="mt-1 text-slate-600 dark:text-slate-400">Analog front ends and acquisition</p>
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <p className="font-semibold">Embedded to cloud</p>
@@ -113,7 +113,7 @@ export default function HeroTabs() {
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <p className="font-semibold">Research to production</p>
-            <p className="mt-1 text-slate-600 dark:text-slate-400">ML evaluation and apps</p>
+            <p className="mt-1 text-slate-600 dark:text-slate-400">Hardware, data, and apps</p>
           </li>
         </ul>
       </div>

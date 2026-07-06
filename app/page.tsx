@@ -22,16 +22,16 @@ export default function Home() {
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             {
-              title: "Web and Desktop Apps",
-              desc: "Developing cross-platform applications with ElectronJS for a variety of tasks. User-Interfaces using web technologies on web, desktop and single board computers (eg Raspberry Pi) with isolated or connected usecases.",
+              title: "Sensor Electronics",
+              desc: "Analog front ends, signal conditioning, embedded interfaces, and measurement hardware for biosignals, sensors, and custom acquisition systems.",
             },
             {
-              title: "Data and ML Systems",
-              desc: "Database systems from traditional SQL (eg. SQLite & PostSQL), NoSQL (eg MongoDB), and vector databases. Analystics that uses classical statistics and machine learning in conjunction. Research & Implementation for situations that require novel solutions.",
+              title: "Embedded and Edge Systems",
+              desc: "Firmware, microcontroller integration, single-board computer deployments, and device-to-cloud workflows for hardware that needs to collect reliable data in the field.",
             },
             {
-              title: "Signal Processing",
-              desc: "Signal processing and machine learning for sensor readings from continuous data streams and discrete even streams.",
+              title: "Signal Processing and Data Platforms",
+              desc: "Filtering, event detection, analytics, databases, and machine learning pipelines for continuous sensor streams and discrete measurement events.",
             },
           ].map((item) => (
             <div
