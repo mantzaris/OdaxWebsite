@@ -36,6 +36,7 @@ export default function ProductsPage() {
                     src={p.hero}
                     alt={`${p.name} image`}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-contain"
                     style={p.heroRotate ? { transform: `rotate(${p.heroRotate}deg)` } : undefined}
                   />

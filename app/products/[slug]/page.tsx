@@ -20,6 +20,8 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
             src={product.hero}
             alt={`${product.name} hero`}
             fill
+            sizes="(min-width: 1280px) 1152px, calc(100vw - 3rem)"
+            priority
             className="object-contain"
             style={product.heroRotate ? { transform: `rotate(${product.heroRotate}deg)` } : undefined}
           />
