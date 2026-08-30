@@ -1,6 +1,6 @@
 // app/page.tsx
 import Link from "next/link"
-import { allPosts } from "@/.contentlayer/generated"
+import { allPosts, allProducts } from "@/.contentlayer/generated"
 import HeroTabs from "@/components/hero-tabs"
 
 const POST_LIMIT = 6; 
@@ -11,10 +11,20 @@ export default function Home() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, POST_LIMIT)
 
+  const productSlides = allProducts
+    .filter(product => product.published !== false && product.hero)
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+    .map(product => ({
+      name: product.name,
+      href: product.url,
+      image: product.hero!,
+      imageRotation: product.heroRotate,
+    }))
+
   return (
     <>
       {/* The only hero on the page */}
-      <HeroTabs />
+      <HeroTabs productSlides={productSlides} />
 
       {/* Capabilities */}
       <section className="py-12 border-top border-t">

@@ -17,6 +17,8 @@ export const Product = defineDocumentType(() => ({
     features: { type: 'list', of: { type: 'string' } },
     order: { type: 'number' },
     published: { type: 'boolean', default: true },
+    amazonUrl: { type: 'string' },
+    ebayUrl: { type: 'string' },
   },
   computedFields: {
     slug: { type: 'string', resolve: (d) => d._raw.flattenedPath.replace(/^products\//, '') },

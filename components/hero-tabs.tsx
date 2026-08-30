@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import ProductSlideshow, { type ProductSlide } from "@/components/product-slideshow"
 
 type Tab = {
   id: string
@@ -42,7 +43,11 @@ const tabs: Tab[] = [
   },
 ]
 
-export default function HeroTabs() {
+interface HeroTabsProps {
+  productSlides: ProductSlide[]
+}
+
+export default function HeroTabs({ productSlides }: HeroTabsProps) {
   const [activeId, setActiveId] = useState<Tab["id"]>("embedded")
   const active = tabs.find(t => t.id === activeId) ?? tabs[0]
 
@@ -56,6 +61,8 @@ export default function HeroTabs() {
         <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-6xl leading-tight">
           {active.heading}
         </h1>
+
+        <ProductSlideshow slides={productSlides} />
 
         <p className="mt-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
           {active.summary}
@@ -92,6 +99,12 @@ export default function HeroTabs() {
             className="inline-flex items-center justify-center rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-red-700"
           >
             Start a project
+          </Link>
+          <Link
+            href="/products"
+            className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-100"
+          >
+            View products
           </Link>
           <Link
             href={active.linkHref}
