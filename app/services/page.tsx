@@ -15,7 +15,7 @@ export default function ServicesPage() {
         {services.map(s => (
           <Link key={s.slug} href={s.url} className="rounded-lg border p-6 hover:shadow">
             <h2 className="text-2xl font-semibold">{s.name}</h2>
-            <p className="mt-2 text-gray-600">{s.shortDescription}</p>
+            <p className="mt-2 text-slate-700 dark:text-slate-300">{s.shortDescription}</p>
           </Link>
         ))}
       </div>

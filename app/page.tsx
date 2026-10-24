@@ -1,11 +1,16 @@
 // app/page.tsx
 import Link from "next/link"
-import { allPosts, allProducts } from "@/.contentlayer/generated"
+import { allPosts, allProducts, allServices } from "@/.contentlayer/generated"
 import HeroTabs from "@/components/hero-tabs"
+import ProductSlideshow from "@/components/product-slideshow"
 
 const POST_LIMIT = 6; 
 
 export default function Home() {
+  const services = allServices
+    .filter(service => service.published !== false)
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+
   const latestPosts = allPosts
     .filter(p => p.published !== false)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -24,11 +29,50 @@ export default function Home() {
   return (
     <>
       {/* The only hero on the page */}
-      <HeroTabs productSlides={productSlides} />
+      <HeroTabs />
 
-      {/* Capabilities */}
-      <section className="py-12 border-top border-t">
-        <h2 className="text-2xl md:text-3xl font-semibold">What we do</h2>
+      {/* Services */}
+      <section aria-labelledby="services-heading" className="py-12 border-t">
+        <div className="flex flex-wrap items-baseline justify-between gap-4">
+          <h2 id="services-heading" className="text-2xl md:text-3xl font-semibold">Our services</h2>
+          <Link href="/services" className="text-sm font-medium text-red-600 hover:underline">
+            View all services
+          </Link>
+        </div>
+        <p className="mt-3 max-w-3xl text-slate-700 dark:text-slate-300">
+          From AI integrations and cybersecurity to applications, analytics, and databases,
+          we help design, build, and improve the systems your business depends on.
+        </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map(service => (
+            <Link
+              key={service.slug}
+              href={service.url}
+              className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 dark:border-slate-800 dark:bg-slate-900"
+            >
+              <h3 className="text-lg font-semibold group-hover:underline">{service.name}</h3>
+              <p className="mt-2 text-slate-700 dark:text-slate-300">{service.shortDescription}</p>
+              <span className="mt-auto pt-4 text-sm font-medium text-red-600">
+                Learn more <span aria-hidden="true">&#8594;</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Electronics and products */}
+      <section aria-labelledby="electronics-heading" className="py-12 border-t">
+        <div className="flex flex-wrap items-baseline justify-between gap-4">
+          <h2 id="electronics-heading" className="text-2xl md:text-3xl font-semibold">
+            Electronics and embedded systems
+          </h2>
+          <Link href="/products" className="text-sm font-medium text-red-600 hover:underline">
+            View products
+          </Link>
+        </div>
+        <p className="mt-3 max-w-3xl text-slate-700 dark:text-slate-300">
+          Sensor boards, kits, and engineering for sensing, data acquisition, and connected hardware.
+        </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             {
@@ -52,6 +96,9 @@ export default function Home() {
               <p className="mt-2 text-slate-700 dark:text-slate-300">{item.desc}</p>
             </div>
           ))}
+        </div>
+        <div className="max-w-3xl">
+          <ProductSlideshow slides={productSlides} />
         </div>
       </section>
 

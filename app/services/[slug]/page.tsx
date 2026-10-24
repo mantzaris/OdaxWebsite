@@ -1,10 +1,21 @@
 import { allServices } from "contentlayer/generated"
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { Mdx } from "@/components/mdx-components"
 
 export function generateStaticParams() {
   return allServices.map(s => ({ slug: s.slug }))
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const service = allServices.find(s => s.slug === params.slug)
+  if (!service) return {}
+
+  return {
+    title: `${service.name} — ODAX Technologies Inc.`,
+    description: service.shortDescription,
+  }
 }
 
 export default function ServiceDetail({ params }: { params: { slug: string } }) {
@@ -20,7 +31,9 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
 
       <hr className="my-8" />
       {/* MDX body from the service file */}
-      <Mdx code={svc.body.code} />
+      <div className="prose prose-slate max-w-4xl dark:prose-invert">
+        <Mdx code={svc.body.code} />
+      </div>
 
       <div className="mt-10">
         <Link href="/contact" className="inline-flex items-center rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-red-700">

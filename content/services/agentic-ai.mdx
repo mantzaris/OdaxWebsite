@@ -1,0 +1,76 @@
+---
+name: "Agentic AI"
+shortDescription: "Software infrastructure for AI agents, with tool use, retrieval, durable workflows, and deep integrations into your business systems."
+order: 6
+published: true
+---
+
+## Software Infrastructure for Agentic AI
+
+ODAX Technologies builds the software infrastructure that lets AI agents carry out useful work inside your organization. We connect models to your data, applications, and business processes, with the permissions, execution controls, and operational visibility needed to run them reliably.
+
+An engagement can start with one focused workflow: investigating a support request, preparing an operational report, processing documents, or assisting an engineering team. We define what completion means, connect the necessary systems, and build a path from the initial request to a verified result.
+
+## Modern Agent Capabilities
+
+We integrate capabilities available across leading AI platforms and build the application services around them:
+
+- **Tool and function calling:** Give agents clearly defined actions for querying systems, preparing changes, and executing approved tasks. Validate inputs and results at the application boundary.
+- **Search and retrieval:** Connect internal documents, databases, vector search, and web sources so agents can work from relevant information and retain source references.
+- **Structured outputs:** Convert model responses into validated records, forms, reports, and API payloads that downstream software can use.
+- **Task orchestration:** Coordinate multiple steps, route work to suitable models or specialist agents, and manage handoffs between automation and people.
+- **Context and memory:** Manage conversation state, task history, and selected persistent knowledge with explicit access, retention, and deletion rules.
+- **Multimodal workflows:** Process documents and images, and integrate voice, streaming responses, or live interactions where the selected platform supports them.
+- **Code and browser tools:** Run analysis or interact with applications in isolated environments, with controlled credentials, network access, and execution limits.
+
+## Deep Task Integrations
+
+Deep integration connects an agent to the actual steps, records, and decisions that make up a task. A support workflow might need the customer record, an order history, a knowledge base, and a ticketing system. An engineering workflow might need a repository, an issue tracker, a test runner, and a review queue.
+
+We build connectors through application APIs, webhooks, databases, and the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/learn/architecture). MCP provides a common interface for exposing tools and context; the surrounding application still needs to enforce permissions, validate actions, and handle failures.
+
+### Carry Work Across Systems
+
+Each integration maps the business task to explicit operations. We reconcile identifiers across systems, preserve the requesting user's access rights, check that records are still current, and return results the next step can use. Write operations include duplicate prevention and confirmation of the resulting state.
+
+For example, a customer-support workflow can:
+
+1. Read a new ticket and retrieve the matching customer and order records.
+2. Find relevant product documentation and support policies, retaining references for review.
+3. Prepare a proposed resolution and the corresponding record changes.
+4. Request staff approval when the action affects money, access, or a customer commitment.
+5. Apply the approved changes, verify the result, and record the outcome in the ticket.
+
+If a downstream system is unavailable, the workflow can preserve its progress, retry safely, or hand the task to a person with the evidence already collected.
+
+### Fit the Workflow to Your Team
+
+- **Operations and reporting:** Reconcile records across business systems, investigate exceptions, and produce reports with links back to their supporting data.
+- **Document processing:** Extract information from incoming files, check it against existing records, route exceptions for review, and write approved results into the destination system.
+- **Engineering and technical support:** Gather issue context, inspect code or diagnostic logs, run approved checks, and prepare a change or investigation summary for review.
+
+These are examples of workflows we can design around your systems, permissions, and acceptance criteria.
+
+## Infrastructure for Production Use
+
+- **Durable execution:** Job queues, scheduled and event-driven work, saved checkpoints, timeouts, cancellation, and recovery after interruptions.
+- **Controlled actions:** Scoped service accounts, role-based permissions, secret management, human approval steps, and limits on what each tool can change.
+- **Quality evaluation:** Representative task datasets, regression checks, tool-result validation, and measurements of completion quality and human correction rates.
+- **Operational visibility:** Traces of model and tool activity, audit records, error reporting, and dashboards for latency, usage, and cost.
+- **Deployment and maintenance:** Versioned prompts and tool definitions, staged releases, rollback plans, and documented ownership of the running service.
+
+We also review prompt-injection risks, untrusted tool output, and sensitive-data handling as part of the integration design. Our [Cybersecurity service](/services/cybersecurity) can provide a focused review of the surrounding application and infrastructure.
+
+## Built Around Your AI Stack
+
+We can work with platforms such as [OpenAI](https://developers.openai.com/tracks/building-agents), [Anthropic Claude](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview), and [Google Gemini](https://ai.google.dev/gemini-api/docs/function-calling). We select models and tools around the task, deployment environment, data requirements, and operating budget. Individual capabilities and hosting options depend on the chosen provider and model.
+
+For projects centered on analytics and knowledge retrieval, see [AI Integration with Classic Data Science](/services/ai-integration) and [Databases: SQL, NoSQL, Vector](/services/databases).
+
+## From First Workflow to Deployment
+
+1. **Define the task:** Map the process, connected systems, permissions, review points, and measurable completion criteria.
+2. **Build and evaluate:** Implement a focused workflow and test it against representative cases, including missing data and failed actions.
+3. **Deploy and hand over:** Deliver the application code, connectors, deployment configuration, evaluation results, and operating documentation.
+
+Bring us a workflow your team repeats, the systems it touches, and the result you need. We can help turn it into a practical agentic application.
