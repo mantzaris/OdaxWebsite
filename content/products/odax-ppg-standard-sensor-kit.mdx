@@ -1,0 +1,130 @@
+---
+name: "ODAX PPG Standard Sensor Kit"
+shortDescription: "Reflective PPG sensor kit with the ODAX Reflective PPG Sensor board in a black enclosure, providing a filtered analog waveform for a host ADC."
+hero: "/images/products/odax-ppg-standard-sensor-kit/front.jpg"
+status: "ga"
+features:
+  - "ODAX Reflective PPG Sensor board with a black enclosure"
+  - "Green reflective finger sensing with an ams OSRAM SFH 7072 optical module"
+  - "Filtered analog output for a high-impedance microcontroller ADC or acquisition system"
+  - "Based on the ODAX-PPG-SR1-100-STD-R1 sensor board"
+  - "For finger-pulse experiments, biofeedback prototypes, and signal-processing development"
+order: 0.35
+published: true
+---
+
+## Overview
+
+The **ODAX PPG Standard Sensor Kit** — **ODAX Reflective PPG Standard Sensor Kit - Sensor Board with Enclosure** — combines the [ODAX Reflective PPG Sensor](/products/odax-ppg-sensor) board with a black enclosure for reflective finger photoplethysmography (PPG) experiments.
+
+The kit is based on the **ODAX-PPG-SR1-100-STD-R1** board. Its green optical emitters and photodiode sense changes in reflected light at the finger, while the analog front end conditions the signal and provides a filtered voltage output for a host ADC. Pulse detection and rate estimation are performed by your own firmware or software.
+
+**Kit SKU / MPN:** `ODAX-PPG-SK1-100-BLK-R1`
+
+## Kit Contents
+
+1. **[ODAX Reflective PPG Sensor board](/products/odax-ppg-sensor)**. Board SKU / MPN: `ODAX-PPG-SR1-100-STD-R1`
+2. **Black sensor enclosure** housing the PPG board
+
+## Board Datasheet
+
+The kit uses the **ODAX PPG Standard** sensor board. Refer to its R1 datasheet for electrical and optical characteristics, circuit operation, board dimensions, and connection guidance. The datasheet covers the underlying board; its specifications are preliminary nominal design values.
+
+<div className="not-prose flex flex-wrap gap-3 mt-4">
+  <a
+    href="/datasheets/ODAX-PPG-SR1-100-STD-R1.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+  >
+    PPG sensor board datasheet (PDF)
+  </a>
+
+  <a
+    href="/datasheets/ODAX-PPG-SR1-100-STD-R1.pdf"
+    download
+    className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900"
+  >
+    Download board datasheet
+  </a>
+</div>
+
+## Product Photos
+
+<div className="not-prose grid grid-cols-1 gap-4 mt-4 lg:grid-cols-2">
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex h-80 items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <Image
+        src="/images/products/odax-ppg-standard-sensor-kit/front.jpg"
+        alt="Front view of the ODAX PPG Standard Sensor Kit with black enclosure and connection cable"
+        width={1490}
+        height={1791}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Front view of the enclosed PPG sensor and cable
+    </figcaption>
+  </figure>
+
+  <figure className="m-0 rounded-2xl border p-3 shadow-sm dark:border-slate-800">
+    <div className="flex h-80 items-center justify-center overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+      <Image
+        src="/images/products/odax-ppg-standard-sensor-kit/side.jpg"
+        alt="Side view of the ODAX PPG Standard Sensor Kit showing the black enclosure profile and connection cable"
+        width={1948}
+        height={1337}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="max-h-full w-auto max-w-full object-contain"
+      />
+    </div>
+    <figcaption className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      Side view of the enclosure and cable
+    </figcaption>
+  </figure>
+</div>
+
+## The Sensor Board Inside
+
+The [ODAX Reflective PPG Sensor](/products/odax-ppg-sensor), identified as **ODAX PPG Standard** in the datasheet, uses an **ams OSRAM BIOFY SFH 7072** optical module with two green emitters and an IR-cut photodiode. Its analog signal path converts photodiode current to voltage, suppresses the steady optical background, amplifies pulse variations, and filters the output.
+
+| Board characteristic | Description |
+|---|---|
+| Board SKU / MPN | `ODAX-PPG-SR1-100-STD-R1` |
+| Sensing method | Green reflective finger PPG |
+| External supply, `VCC` | 3.0 V to 5.0 V design evaluation range; 3.3 V or 5.0 V nominal |
+| Analog output, `VOUT` | Filtered waveform with a nominal settled baseline near 1.25 V |
+| Host interface | High-impedance ADC input with a shared ground reference |
+| Signal processing | Pulse detection and rate estimation performed by the host |
+
+[View the ODAX Reflective PPG Sensor product page for full board specifications and connection details.](/products/odax-ppg-sensor)
+
+## Applications
+
+- Reflective finger-pulse experiments
+- Biofeedback prototypes
+- Analog biosignal acquisition
+- Host-side filtering, pulse detection, and signal-processing development
+
+## Getting Started
+
+1. Review the [board datasheet](/datasheets/ODAX-PPG-SR1-100-STD-R1.pdf) and verify the actual cable connections to `VCC`, `GND`, and `VOUT` before applying power.
+2. Connect `VOUT` to a high-impedance host ADC input and share the signal ground. Use a clean supply within the board's documented range and keep the output within the ADC's permitted input range.
+3. Position the finger over the sensing area with light, consistent pressure. Support the hand and cable and shield the sensor from strong ambient light.
+4. Allow the baseline to settle, then acquire and process the analog waveform using your host system.
+
+See the [sensor board's getting-started guidance](/products/odax-ppg-sensor#getting-started) for acquisition and signal-interpretation details.
+
+## Ordering Information
+
+- Product: **ODAX PPG Standard Sensor Kit**
+- Description: **ODAX Reflective PPG Standard Sensor Kit - Sensor Board with Enclosure**
+- SKU / part number: **ODAX-PPG-SK1-100-BLK-R1**
+- Manufacturer part number (MPN): **ODAX-PPG-SK1-100-BLK-R1**
+- Included board: **ODAX Reflective PPG Sensor**
+- Board SKU / MPN: **ODAX-PPG-SR1-100-STD-R1**
+- Color: **Black**
+- Format: **Reflective PPG sensor board with enclosure**
+
+[Contact us](/contact) for product and ordering inquiries.
